@@ -1,0 +1,30 @@
+# Rule-based chatbot using Python
+
+# Dictionary of predefined questions and responses
+responses = {
+    "hi": "Hello! How can I assist you today?",
+    "hello": "Hi there! What can I do for you?",
+    "how are you": "I'm just a bunch of code, but thanks for asking!",
+    "what's your name": "I'm a simple chatbot created to assist you.",
+    "bye": "Goodbye! Have a nice day!"
+}
+
+def chatbot():
+    print("Chatbot: Hello! I am your assistant. You can type 'bye' to exit.")
+    
+    while True:
+        user_input = input("You: ").lower()  # Get user input and convert to lowercase for uniform matching
+        
+        # Exit condition
+        if user_input == "bye":
+            print("Chatbot: Goodbye! Have a great day!")
+            break
+        
+        # Find a matching response
+        response = responses.get(user_input, "Sorry, I don't understand that. Can you rephrase?")
+        
+        # Display the response
+        print(f"Chatbot: {response}")
+
+# Run the chatbot
+chatbot()
